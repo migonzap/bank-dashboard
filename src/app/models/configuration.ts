@@ -1,12 +1,8 @@
-export var config = {
-  "urls": {
-    "lastUrl": "http://indecon.site/last",
-    "valuesUrl": "http://indecon.site/values/"
-  },
-  "keys": [],
-  "components": [
-    "last",
-    "minMax",
-    "chart"
-  ]
+import { Element } from "./element";
+
+export interface  Configuration {
+  lastValuesUrl : string,
+  allValuesByElementUrl : string,
+  elementValueByDateUrl : string,
+  elements : Element[]
 }

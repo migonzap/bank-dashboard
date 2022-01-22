@@ -1,14 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
+import { ConfigurationService } from "../../services/configuration/configuration.service";
+import { Configuration } from "../../models/configuration";
 
 @Component({
   selector: 'app-navigator',
   templateUrl: './navigator.component.html',
   styleUrls: ['./navigator.component.scss']
 })
-export class NavigatorComponent {
+export class NavigatorComponent implements OnInit{
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
@@ -16,6 +18,16 @@ export class NavigatorComponent {
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  configuration!: Configuration;
 
+  constructor(private breakpointObserver: BreakpointObserver,
+              private configurationService: ConfigurationService) {
+  }
+
+  ngOnInit(): void {
+    this.configurationService.getConfiguration()
+      .subscribe(config => {
+        this.configuration = config;
+      })
+  }
 }

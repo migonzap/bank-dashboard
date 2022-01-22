@@ -1,0 +1,25 @@
+/*card.component.css*/
+.dashboard-card {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+}
+
+.dashboard-card-content {
+  text-align: center;
+  flex-grow: 1;
+  display: block;
+  flex-direction: column;
+  align-items: center;
+  max-height: 100%;
+  justify-content: center;
+  align-items: stretch;
+  overflow-y: auto;
+}
+
+mat-card {
+  display: flex;
+  flex-direction: column;
+}
