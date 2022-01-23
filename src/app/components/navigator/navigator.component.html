@@ -3,9 +3,10 @@
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
-    <mat-toolbar>Menu</mat-toolbar>
+    <mat-toolbar><mat-icon class="logo">home</mat-icon></mat-toolbar>
+    <div><span class="section">Elementos</span></div>
     <mat-nav-list>
-      <a mat-list-item *ngFor="let element of configuration?.elements" routerLink="/{{element.key}}">{{element.title}}</a>
+      <a mat-list-item *ngFor="let element of configuration?.elements" routerLink="/{{element.key}}" [routerLinkActive]="['selected-element']">{{element.title}}</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -18,7 +19,10 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>bank-dashboard</span>
+      <div class="profile">
+        <img src="assets/profile.png" class="profile-image"/>
+        <span>Bienvenid@ a BankDashboard<br><span class="profile-subtitle">Una plataforma para revisar valores de elementos</span></span>
+      </div>
     </mat-toolbar>
     <router-outlet></router-outlet>
   </mat-sidenav-content>

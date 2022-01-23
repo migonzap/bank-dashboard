@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from "../../services/data/data.service";
-import { ActivatedRoute } from "@angular/router";
-import * as moment from 'moment';
 import { Chart, registerables } from "chart.js";
 
 @Component({
@@ -11,56 +8,75 @@ import { Chart, registerables } from "chart.js";
 })
 export class ChartComponent implements OnInit {
 
+  label: string = '';
   values: any[] = [];
   dates : any[] = [];
-  chart?: Chart;
+  chart!: Chart;
 
-  constructor(private route: ActivatedRoute,
-              private dataService: DataService) {
+  constructor() {
     Chart.register(... registerables);
   }
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe(paramMap => {
-      let id = paramMap.get('id');
-      if(id != null) this.load(id);
-    });
+
   }
 
-  private load(id: string) {
+  load(label: string, values : any[], dates: any[]) {
 
-    this.values = [];
-    this.dates = [];
+    this.label = label;
+    this.values = values;
+    this.dates = dates;
+    const primaryColor = '#0288D1';
+    const primaryLightColor = '#B2DBF1';
 
-    this.dataService.findAllValuesByElement(id).subscribe((response: any) => {
-      for (const [date, value] of Object.entries(response.values)) {
-        this.dates.push(moment(new Date(Number(date) * 1000)).format("DD-MM-YYYY"));
-        this.values.push(value);
-      }
+    // Update chart
+    if(this.chart != null) this.chart.destroy();
 
-      if(this.chart != null) this.chart.destroy();
-      this.chart = new Chart("elementChart", {
-        type: 'line',
-        data: {
-          labels: this.dates,
-          datasets: [{
-            label: '# of Votes',
-            data: this.values,
-            fill: true,
-            borderColor: 'rgb(75, 192, 192)',
-            tension: 0.1
-          }],
-
-        },
-        options: {
-          scales: {
-            y: {
-              beginAtZero: true
+    this.chart = new Chart("elementChart", {
+      type: 'line',
+      data: {
+        labels: this.dates,
+        datasets: [{
+          label: this.label,
+          data: this.values,
+          fill: {
+            target: true,
+            above: primaryLightColor,
+            below: primaryLightColor
+          },
+          borderColor: primaryColor,
+          borderWidth: 3,
+          hoverBackgroundColor: 'rgba(0, 0, 0, 0.85)',
+          pointBorderColor: primaryColor,
+          pointBackgroundColor: primaryColor,
+          pointBorderWidth: 0,
+          pointHitRadius: 3,
+          pointRadius: 0,
+          pointHoverRadius: 1,
+          tension: 0
+        }],
+      },
+      options: {
+        maintainAspectRatio: false,
+        scales: {
+          y: {
+            beginAtZero: true,
+            grid: {
+              lineWidth: 1
+            }
+          },
+          x: {
+            grid: {
+              lineWidth: 0
             }
           }
+        },
+        plugins: {
+          legend: {
+            display: false,
+          }
         }
-      });
-      this.chart.draw();
+      }
     });
   }
 }

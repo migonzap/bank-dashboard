@@ -20,13 +20,17 @@ import { MatMenuModule } from '@angular/material/menu';
 import { DataService } from "./services/data/data.service";
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CardComponent } from './components/card/card.component';
-import { TableComponent } from './components/table/table.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { ChartComponent } from './components/chart/chart.component';
 import { ConfigurationService } from "./services/configuration/configuration.service";
 import { RestDataService } from "./services/data/rest-data.service";
+import { LastCardComponent } from './components/last-card/last-card.component';
+import { MinCardComponent } from './components/min-card/min-card.component';
+import { MaxCardComponent } from './components/max-card/max-card.component';
+import { AvgCardComponent } from './components/avg-card/avg-card.component';
+import {CommonModule} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -35,11 +39,15 @@ import { RestDataService } from "./services/data/rest-data.service";
     PageNotFoundComponent,
     DashboardComponent,
     CardComponent,
-    TableComponent,
-    ChartComponent
+    ChartComponent,
+    LastCardComponent,
+    MinCardComponent,
+    MaxCardComponent,
+    AvgCardComponent
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     LayoutModule,

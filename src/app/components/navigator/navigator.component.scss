@@ -3,15 +3,70 @@
 }
 
 .sidenav {
-  width: 200px;
+  width: 250px;
 }
 
 .sidenav .mat-toolbar {
   background: inherit;
 }
 
+.sidenav .section {
+  text-transform: uppercase;
+  color: var(--secondary-text-color);
+  padding: 0 var(--sidenav-padding) !important;
+}
+
+.mat-list-item-content {
+  padding: 0 var(--sidenav-padding) !important;
+}
+
+.mat-drawer-container {
+  background: var(--background-color);
+}
+
 .mat-toolbar.mat-primary {
   position: sticky;
   top: 0;
   z-index: 1;
+  background: var(--toolbar-background-color);
+  border-bottom: var(--toolbar-border-bottom);
+  min-height: 75px;
+}
+
+.selected-element{
+  background: var(--primary-color-light) !important;
+  color: var(--primary-color);
+  box-shadow: inset -6px 0 0px 0px var(--primary-color);
+}
+
+.mat-sidenav-content {
+  color: var(--primary-text-color);
+}
+
+.mat-icon-button{
+  color: var(--primary-text-color);
+}
+
+.logo{
+  color: var(--primary-color);
+}
+
+.profile {
+  display: contents;
+  flex-direction: row;
+  color: var(--primary-text-color) !important;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+.profile-image {
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  margin: 0 calc(1.5 * var(--card-spacing));
+}
+
+.profile-subtitle {
+  font-size: var(--font-size);
+  font-weight: 400;
 }
