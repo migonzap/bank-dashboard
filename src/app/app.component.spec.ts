@@ -23,13 +23,6 @@ describe('AppComponent', () => {
   it(`should have as title 'bank-dashboard'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('bank-dashboard');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('bank-dashboard app is running!');
+    expect(app.title).toBe('bank-dashboard');
   });
 });

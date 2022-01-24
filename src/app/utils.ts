@@ -1,3 +1,5 @@
+import * as moment from "moment";
+
 export default class Utils {
 
   // Returns the min value from an array
@@ -22,13 +24,19 @@ export default class Utils {
     return Utils.round(sum / values.length);
   }
 
+  // Formats unit string
   static formatUnit(unit: string) {
     return unit == 'porcentual' ? '%' : unit;
   }
 
+  // Formats date to "DD-MM-YYYY"
+  static formatDate(date: string) {
+    return moment(new Date(Number(date) * 1000)).format("DD-MM-YYYY");
+  }
+
   // Rounds at most 2 decimal places if necessary
   static round(value: number) {
-     return Math.round((value + Number.EPSILON) * 100) / 100
+     return Math.round((value + Number.EPSILON) * 100) / 100;
   }
 
 

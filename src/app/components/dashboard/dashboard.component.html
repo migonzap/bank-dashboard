@@ -1,5 +1,5 @@
 <div class="grid-container">
-  <h1 class="mat-h1">{{title | titlecase }}</h1>
+  <h1 class="mat-h1">{{title != null ? (title | titlecase) : 'Elemento no reconocido'}}</h1>
   <mat-grid-list cols="{{( cards | async )?.columns }}" rowHeight="175px">
     <!--Cards-->
     <mat-grid-tile [colspan]="( cards | async )!.miniCard.cols"

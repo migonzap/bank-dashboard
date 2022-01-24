@@ -8,6 +8,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { NavigatorComponent } from './navigator.component';
+import { JsonConfigurationService } from "../../services/configuration/json-configuration.service";
+import { ConfigurationService } from "../../services/configuration/configuration.service";
+import {HttpClientTestingModule} from "@angular/common/http/testing";
 
 describe('NavigatorComponent', () => {
   let component: NavigatorComponent;
@@ -24,6 +27,9 @@ describe('NavigatorComponent', () => {
         MatListModule,
         MatSidenavModule,
         MatToolbarModule,
+        HttpClientTestingModule
+      ], providers: [
+        { provide: ConfigurationService, useClass: JsonConfigurationService },
       ]
     }).compileComponents();
   }));

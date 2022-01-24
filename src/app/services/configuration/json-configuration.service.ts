@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { ConfigurationService } from "./configuration.service";
 import { Configuration } from "../../models/configuration";
-import {Injectable} from "@angular/core";
+import { Injectable } from "@angular/core";
 
 export const CONFIGURATION_FILE_PATH = './assets/config.json';
 

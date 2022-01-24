@@ -39,14 +39,13 @@ export class RestDataService extends DataService implements OnInit {
   }
 
   handleError(error: HttpErrorResponse) {
-    // TODO Refactor this
-    let errorMessage = 'Unknown error!';
+    let errorMessage = 'Error desconocido';
     if (error.error instanceof ErrorEvent) {
       // Client-side errors
       errorMessage = `Error: ${error.error.message}`;
     } else {
       // Server-side errors
-      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+      errorMessage = `Código de error: ${error.status}\nMensaje: ${error.message}`;
     }
     window.alert(errorMessage);
     return throwError(errorMessage);

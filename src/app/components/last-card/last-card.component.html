@@ -1,4 +1,4 @@
 <div class="content">
-  <span class="value">{{value}} {{unit}}</span>
-  <span class="date">Al {{date}}</span>
+  <span class="value">{{value != null ? value : '--'}} {{unit}}</span>
+  <span class="date">{{date != null ? 'Al ' + date : 'No hay datos'}}</span>
 </div>

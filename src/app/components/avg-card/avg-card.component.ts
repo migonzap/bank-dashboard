@@ -23,6 +23,4 @@ export class AvgCardComponent implements OnInit {
     this.startDate = startDate;
     this.endDate = endDate;
   }
-
-
 }

@@ -1,4 +1,4 @@
 <div class="content">
-  <span class="value">{{value}} {{unit}}</span>
-  <span class="date">Entre {{startDate}} y {{endDate}}</span>
+  <span class="value">{{value != null ? value : '--'}} {{unit}}</span>
+  <span class="date">{{startDate != null ? 'Entre ' + startDate + ' y ' + endDate : 'No hay datos'}}</span>
 </div>
