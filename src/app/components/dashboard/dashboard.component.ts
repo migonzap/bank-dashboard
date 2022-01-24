@@ -70,7 +70,6 @@ export class DashboardComponent implements OnInit {
 
         let values : any[] = [];
         let dates : any[] = [];
-        let rows: any[] = [];
 
         // Data service call
         this.dataService.findAllValuesByElement(id).subscribe((response: any) => {
@@ -92,10 +91,6 @@ export class DashboardComponent implements OnInit {
                 let formattedDate = Utils.formatDate(date);
                 values.push(value);
                 dates.push(formattedDate);
-                rows.push({
-                  'date': formattedDate,
-                  'value': Number(value)
-                });
               }
 
               // Refresh cards values
