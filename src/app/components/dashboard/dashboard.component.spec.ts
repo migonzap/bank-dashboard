@@ -144,7 +144,7 @@ describe('DashboardComponent', () => {
     expect(component.chart.dates).toEqual(dates);
   });
 
-  it('should not fill dashboard components when no data found', () => {
+  it('should not fill dashboard components when no data was found', () => {
     // given
     let lastCard = getLastCardDebugElement();
     let minCard = getMinCardDebugElement();

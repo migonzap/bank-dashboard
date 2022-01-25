@@ -1,27 +1,26 @@
 # BankDashboard
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.4.
+BankDashboard es una aplicación web para revisar diferentes indicadores económicos.
+El proyecto fue desarrollando usando [Angular CLI](https://github.com/angular/angular-cli) version 13.1.4.
 
-## Development server
+## Ejecución de la aplicación
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+1. Debes tener instalado la última versión estable de NodeJS.
+2. Ejecuta `npm install` para instalar las dependencias de la aplicación.
+3. Ejecuta `ng serve` para correr un servidor de desarrollo y esperar su inicio.
+4. Navega a `http://localhost:4200/`. La aplicación se refrescará automáticamente si cambias algún archivo fuente.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Construcción de la aplicación
 
-## Build
+Ejecuta `ng build` para construir el proyecto. Los artefactos construidos estarán guardados en el directorio `dist/`.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Ejecutar pruebas unitarias
 
-## Running unit tests
+Ejecuta `ng test --include=**/dashboard.component.spec.ts` para ejecutar las pruebas unitarias usando [Karma](https://karma-runner.github.io).
+Las siguientes pruebas verifican el funcionamiento de una funcionalidad crítica de la aplicación:
+- `should fill dashboard components when data is successfully retrieved`: Verifica que se desplieguen los componentes del Panel y que contengan la información correcta.
+- `should not fill dashboard components when no data was found`: Verifica que los componentes del Panel señalen que no hay datos cuando no hay información que desplegar.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
