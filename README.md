@@ -5,10 +5,11 @@ El proyecto fue desarrollando usando [Angular CLI](https://github.com/angular/an
 
 ## Ejecución de la aplicación
 
-1. Debes tener instalado la última versión estable de NodeJS.
+1. Asegúrate de tener instalado la última versión estable de NodeJS.
 2. Ejecuta `npm install` para instalar las dependencias de la aplicación.
-3. Ejecuta `ng serve` para correr un servidor de desarrollo y esperar su inicio.
-4. Navega a `http://localhost:4200/`. La aplicación se refrescará automáticamente si cambias algún archivo fuente.
+3. Clona este repositorio en tu máquina y dirígete a la ubicación del proyecto.
+4. Ejecuta `ng serve` para correr un servidor de desarrollo y esperar su inicio.
+5. Navega a `http://localhost:4200/`. La aplicación se refrescará automáticamente si cambias algún archivo fuente.
 
 
 ## Construcción de la aplicación
