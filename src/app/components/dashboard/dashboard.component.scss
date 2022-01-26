@@ -1,0 +1,11 @@
+.grid-container {
+  margin: 20px;
+}
+
+.dashboard-card-content {
+  text-align: center;
+}
+
+.mat-progress-spinner .spinner circle, .mat-spinner .spinner circle {
+  stroke: var(--primary-color) !important;
+}

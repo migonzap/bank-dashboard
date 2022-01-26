@@ -1,0 +1,44 @@
+{
+  "elements": [
+    {
+      "key": "cobre",
+      "title": "Cobre"
+    },
+    {
+      "key": "dolar",
+      "title": "Dólar"
+    },
+    {
+      "key": "euro",
+      "title": "Euro"
+    },
+    {
+      "key": "ipc",
+      "title": "IPC"
+    },
+    {
+      "key": "ivp",
+      "title": "IVP"
+    },
+    {
+      "key": "oro",
+      "title": "Oro"
+    },
+    {
+      "key": "plata",
+      "title": "Plata"
+    },
+    {
+      "key": "uf",
+      "title": "UF"
+    },
+    {
+      "key": "utm",
+      "title": "UTM"
+    },
+    {
+      "key": "yen",
+      "title": "Yen"
+    }
+  ]
+}
